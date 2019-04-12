@@ -1,84 +1,11 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
-      <v-list>
-        <v-list-tile
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title v-text="item.title" />
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
-    <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
-      >
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
-    </v-toolbar>
+  <v-app>
     <v-content>
+      <v-parallax src="https://lh3.googleusercontent.com/ie6j58sssM87w91UtNg6JyD7ZlU3kUQIGp0fqvBvp398oDjDDUgFL8ZRXCzFNW0FmN7_hDj2q7Rbhl52TZWXQcI0MFTrD7kJ1XIOuEG-MuG3JWGQeN36Ey4OlBLbjEn7GGCpYIIHZwZcq6mcBT_UkwzDq3GRNu532PwXgZ5sudVolyT18maUHQqNKcjHvoN3GktjT51QxE10wj_hV8A0CsEFVnSdCNUkPqAoutkFpohQwTVKB2cuAvMk9q-nO694qMWyq0IAnI2cRjNE6BEa_atTtNU7vd9FZJKjA7vG6Rxzmn7lfJqnyUUMu6WVohoRcUoViHUkVkhmGrpSw1qCkIfW9AdG8YT7hJzcQ9ldNJFoHFEPjetcaB9RWko9vAThPIeC0QOfWf2vKiw6H7qGOAkNWmYbeWxm-pj6JEDNR4f9vxf4si866GrhriPBhS6qitT0Lk2_cNIQ465BwJ6cb_lZFmHRRGaxde-yf--M33FRsEM2xx6EODQ7wOJ3TZjE_RqXC9-rxjzOjWmWkFAgdc5lZRxtxmfgy0PQd5EmyqEtusJrQLHRkoBx0RowDZkTm1wsA7qzIYgZgvs9Q42AuhfVc3IG-WBvXKBPryVgdQSqLeI4tuVUra2UCia2gpBQ0G2ocMqa3kNZXjfJtRs90hXU8sNPO9iXNpp4BtKRecwFoZkrB3hpV_ZFh57eGzM3vEz7L8CO6cb7aYWmY2O7j3QJ=w1796-h1346-no" />
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>
-              compare_arrows
-            </v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
       :fixed="fixed"
       app
