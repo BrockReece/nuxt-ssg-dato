@@ -5,6 +5,7 @@
       <v-container>
         <nuxt />
       </v-container>
+      <photos />
     </v-content>
     <v-footer
       :fixed="fixed"
@@ -16,7 +17,12 @@
 </template>
 
 <script>
+import Photos from '~/components/Photos'
 export default {
+  components: {
+    Photos
+  },
+
   data() {
     return {
       clipped: false,
