@@ -8,8 +8,7 @@
       <template v-slot:opposite>
         <span
           :class="`headline font-weight-bold `"
-          v-text="milestone.date"
-        />
+        >{{ milestone.date | format }}</span>
       </template>
       <div class="py-3">
         <h2 :class="`headline font-weight-light mb-3`">
