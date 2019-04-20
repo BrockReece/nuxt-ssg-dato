@@ -47,12 +47,21 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
+    '@nuxtjs/onesignal',
+    '@nuxtjs/pwa',
   ],
 
   apollo: {
     clientConfigs: {
       default: '~/plugins/apollo.js'
+    }
+  },
+
+  oneSignal: {
+    init: {
+      appId: 'c9d8f1d8-772d-45e2-879c-ea014bc2aa6c',
+      allowLocalhostAsSecureOrigin: true,
     }
   },
 
